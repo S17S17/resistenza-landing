@@ -10,19 +10,26 @@
         .card { background: #121220; border: 1px solid #222; padding: 40px; max-width: 480px; width: 100%; text-align: center; }
         .tag { font-size: 11px; letter-spacing: 3px; color: #FFB800; margin-bottom: 25px; }
         h1 { font-size: 24px; font-weight: 700; margin-bottom: 15px; line-height: 1.4; }
-        .desc { color: #888; font-size: 14px; line-height: 1.7; margin-bottom: 25px; }
+        .desc { color: #888; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
         .items { text-align: right; margin: 20px 0; padding: 15px; background: #0a0a0a; border: 1px solid #222; }
         .items li { color: #aaa; font-size: 13px; margin-bottom: 8px; list-style: none; }
         .price { font-size: 40px; font-weight: 700; color: #FFB800; margin: 20px 0 5px; }
         .price small { font-size: 14px; color: #666; font-weight: 400; }
-        .cta { display: block; background: #FFB800; color: #0a0a0a; padding: 14px; font-weight: 700; text-decoration: none; font-size: 15px; margin: 15px 0; }
+        .cta { display: block; background: #FFB800; color: #0a0a0a; padding: 14px; font-weight: 700; text-decoration: none; font-size: 15px; margin: 15px 0; border: none; cursor: pointer; width: 100%; }
         .cta:hover { background: #e6a600; }
+        .cta.secondary { background: transparent; border: 1px solid #333; color: #888; margin-top: 5px; }
+        .cta.secondary:hover { border-color: #555; color: #aaa; }
         .alt { color: #555; font-size: 12px; margin-top: 20px; }
         .alt a { color: #777; }
         .footer { margin-top: 30px; font-size: 11px; color: #333; }
         .footer a { color: #555; text-decoration: none; }
         .divider { border: none; border-top: 1px solid #222; margin: 25px 0; }
         .urgent { background: #1a0a0a; border: 1px solid #C41230; padding: 12px; margin: 15px 0; font-size: 12px; color: #C41230; }
+        .email-form { margin: 15px 0; }
+        .email-form input { width: 100%; padding: 12px; background: #0a0a0a; border: 1px solid #333; color: #F5F5FA; font-size: 14px; margin-bottom: 8px; text-align: center; }
+        .email-form input::placeholder { color: #555; }
+        .email-form button { width: 100%; padding: 12px; background: #229ED9; color: #fff; border: none; font-weight: 700; font-size: 14px; cursor: pointer; }
+        .success { background: #0a2a1a; border: 1px solid #2a6; color: #2a6; padding: 12px; margin: 15px 0; font-size: 13px; display: none; }
     </style>
 </head>
 <body>
@@ -35,23 +42,30 @@
             <li>✅ Railway instance جاهزة</li>
             <li>✅ n8n workflows مبرمجة</li>
             <li>✅ Twitter auth مضبوط</li>
-            <li>✅ Arabic guide video</li>
+            <li>✅ Arabic guide + video</li>
             <li>✅ MCP server setup</li>
             <li>✅ Support 30 يوم</li>
         </div>
         
         <div class="price">$99 <small>/ one-time</small></div>
         
-        <a href="https://buy.stripe.com/test" class="cta">اشري الآن — Buy Now</a>
+        <a href="https://buy.stripe.com/test" class="cta">💳 اشري الآن — Buy Now</a>
+        <a href="https://cal.com/semah/30min" target="_blank" class="cta secondary">📅 احجز مكالمة — Book a Call</a>
         
         <div class="urgent">3 slots only this week</div>
         
         <hr class="divider">
         
-        <h1 style="font-size: 20px;">Arabic Prompt Engineering Masterclass</h1>
+        <h1 style="font-size: 20px;">Arabic PEM Masterclass</h1>
         <p class="desc" style="margin-top: 8px;">50 prompts + 4 modules + lifetime updates</p>
         <div class="price" style="font-size: 32px;">$79</div>
-        <a href="https://buy.stripe.com/test" class="cta">اشري الآن — Buy Now</a>
+        <a href="https://buy.stripe.com/test" class="cta">💳 اشري الآن — Buy Now</a>
+        
+        <hr class="divider">
+        
+        <h1 style="font-size: 16px; color: #888;">ما عندكش account؟ احجز consultation مجاني</h1>
+        <p class="desc" style="margin-top: 8px; font-size: 12px;">نوضّلك على نظامك و كيفاش تبدأ — gratis</p>
+        <a href="https://cal.com/semah/30min" target="_blank" class="cta secondary">📅 احجز مكالمة مجانية</a>
         
         <div class="alt">
             أو DM: <a href="https://twitter.com/Semah____">@Semah____</a>
