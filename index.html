@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RESISTENZA — Build or被 build.</title>
+<title>RESISTENZA — Ship Before Morning.</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -20,8 +20,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
-/* Koufiya SVG watermark */
 body::before {
   content: '';
   position: fixed;
@@ -34,7 +32,6 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-
 .container {
   position: relative;
   z-index: 1;
@@ -42,8 +39,6 @@ body::before {
   margin: 0 auto;
   padding: 80px 24px 120px;
 }
-
-/* HERO */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -53,7 +48,7 @@ body::before {
   padding-bottom: 80px;
 }
 .hero h1 {
-  font-size: clamp(3rem, 12vw, 7rem);
+  font-size: clamp(2.5rem, 10vw, 6rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.9;
@@ -61,14 +56,25 @@ body::before {
 }
 .hero h1 span { color: var(--accent); }
 .hero .tagline {
-  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-size: clamp(1rem, 3vw, 1.3rem);
   color: #aaa;
-  max-width: 480px;
+  max-width: 520px;
   line-height: 1.6;
   margin-bottom: 48px;
 }
 .hero .tagline strong { color: var(--fg); }
-
+.hero .sub {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero .ship-note {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-top: 16px;
+}
 .cta-row {
   display: flex;
   gap: 16px;
@@ -84,17 +90,8 @@ body::before {
   transition: transform 0.1s;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary {
-  background: var(--fg);
-  color: var(--bg);
-}
-.btn-secondary {
-  background: transparent;
-  color: var(--fg);
-  border: 1px solid #333;
-}
-
-/* STATS */
+.btn-primary { background: var(--fg); color: var(--bg); }
+.btn-secondary { background: transparent; color: var(--fg); border: 1px solid #333; }
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -103,19 +100,9 @@ body::before {
   border: 1px solid #222;
   margin: 80px 0;
 }
-.stat {
-  background: var(--bg);
-  padding: 32px 24px;
-  text-align: center;
-}
-.stat .num {
-  font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-}
+.stat { background: var(--bg); padding: 32px 24px; text-align: center; }
+.stat .num { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.03em; }
 .stat .label { color: #666; font-size: 0.85rem; margin-top: 4px; }
-
-/* WHAT */
 .section { margin: 80px 0; }
 .section h2 {
   font-size: 0.75rem;
@@ -136,11 +123,7 @@ body::before {
   background: var(--bg);
   padding: 32px 28px;
 }
-.card h3 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
+.card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; }
 .card p { color: #888; line-height: 1.7; font-size: 0.9rem; }
 .card .badge {
   display: inline-block;
@@ -155,8 +138,6 @@ body::before {
   margin-bottom: 12px;
   color: #666;
 }
-
-/* BANNER */
 .banner {
   border: 1px solid #333;
   padding: 48px 32px;
@@ -171,8 +152,6 @@ body::before {
   margin-bottom: 16px;
 }
 .banner p { color: #666; margin-bottom: 32px; }
-
-/* PRICING */
 .pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -181,38 +160,17 @@ body::before {
   border: 1px solid #222;
   margin: 40px 0;
 }
-.price-tier {
-  background: var(--bg);
-  padding: 40px 28px;
-}
-.price-tier.featured {
-  border: 1px solid var(--accent);
-  position: relative;
-}
+.price-tier { background: var(--bg); padding: 40px 28px; }
+.price-tier.featured { border: 1px solid var(--accent); position: relative; }
 .price-tier .tier-name {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 16px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #555; margin-bottom: 16px;
 }
-.price-tier .amount {
-  font-size: 2.8rem;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-}
+.price-tier .amount { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.04em; }
 .price-tier .period { font-size: 0.85rem; color: #555; }
 .price-tier ul { list-style: none; margin-top: 24px; }
-.price-tier li {
-  font-size: 0.85rem;
-  color: #888;
-  padding: 6px 0;
-  border-bottom: 1px solid #111;
-}
+.price-tier li { font-size: 0.85rem; color: #888; padding: 6px 0; border-bottom: 1px solid #111; }
 .price-tier li::before { content: '✓ '; color: var(--accent); }
-
-/* FOOTER */
 footer {
   border-top: 1px solid #1a1a1a;
   padding: 48px 0;
@@ -226,12 +184,8 @@ footer .brand { font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em; }
 footer .links { display: flex; gap: 24px; }
 footer a { color: #444; text-decoration: none; font-size: 0.85rem; }
 footer a:hover { color: var(--fg); }
-
-/* SCROLL ANIMATION */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
 .reveal.visible { opacity: 1; transform: none; }
-
-/* MOBILE */
 @media (max-width: 600px) {
   .container { padding: 48px 16px 80px; }
   .stats { grid-template-columns: 1fr; }
@@ -245,126 +199,156 @@ footer a:hover { color: var(--fg); }
 
 <!-- HERO -->
 <section class="hero">
-  <h1>RESISTENZA<br><span>YE 3CHIRI</span></h1>
+  <p class="sub">Micro-SaaS Pipeline</p>
+  <h1>Ship Before<br><span>Morning.</span></h1>
   <p class="tagline">
-    Arabic AI built for <strong>builders</strong>, not for VCs.<br>
-    Open tools. No lock-in. No mercy.
+    200 lines of code. Boring API underneath.<br>
+    AI wrapper on top.<br>
+    <strong>$0 hosting. First users by morning.</strong>
   </p>
   <div class="cta-row">
-    <a href="#tools" class="btn btn-primary">Explore Tools</a>
+    <a href="#pipeline" class="btn btn-primary">See the Pipeline</a>
     <a href="https://github.com/S17S17" class="btn btn-secondary">GitHub</a>
   </div>
+  <p class="ship-note">YA 3CHIRI — We don't theorize. We ship.</p>
 </section>
 
 <!-- STATS -->
 <div class="stats reveal">
   <div class="stat">
-    <div class="num">7</div>
-    <div class="label">Open Source Tools</div>
+    <div class="num">200</div>
+    <div class="label">Lines of Code</div>
   </div>
   <div class="stat">
     <div class="num">$0</div>
-    <div class="label">Monthly Cost</div>
+    <div class="label">Monthly Hosting</div>
   </div>
   <div class="stat">
-    <div class="num">265+</div>
-    <div class="label">GitHub Repos Tracked</div>
+    <div class="num">24h</div>
+    <div class="label">Seed to Sale</div>
   </div>
 </div>
 
-<!-- WHAT WE BUILD -->
-<section class="section reveal" id="tools">
-  <h2>What We Ship</h2>
+<!-- THE PIPELINE -->
+<section class="section reveal" id="pipeline">
+  <h2>The Pipeline</h2>
   <div class="grid">
     <div class="card">
-      <div class="badge">Scraping</div>
-      <h3>Twitter + Reddit Scraper</h3>
-      <p>FastAPI scraper with browser-grade session management. No API keys required for reading. Real-time signals from Arabic AI space.</p>
+      <div class="badge">01 — Source</div>
+      <h3>Find the Boring API</h3>
+      <p>Pick something people already pay for. Weather data. Job listings. Stock photos. Any commodity data source with a free tier or paid API.</p>
     </div>
     <div class="card">
-      <div class="badge">Inference</div>
-      <h3>Local AI Stack</h3>
-      <p>Ollama-powered inference. Run 7B models on commodity hardware. Privacy-first. Zero cloud dependency.</p>
+      <div class="badge">02 — Wrap</div>
+      <h3>AI Wrapper in 200 Lines</h3>
+      <p>FastAPI. One endpoint. Feed the raw data through a local LLM. Return something smarter than the API itself. Ollama handles the inference — no API bill.</p>
     </div>
     <div class="card">
-      <div class="badge">Agents</div>
-      <h3>Hermes Agent OS</h3>
-      <p>Multi-agent orchestration with skills, memory, and tool access. Arabic-first voice. Built to run 24/7.</p>
+      <div class="badge">03 — Sell</div>
+      <h3>Landing Page in 1 Hour</h3>
+      <p>Single HTML file. Dark theme. One CTA. No SEO. No content marketing. Paid waitlist or Gumroad. Real buyers from day one.</p>
+    </div>
+    <div class="card">
+      <div class="badge">04 — Deploy</div>
+      <h3>$0 Hosting Stack</h3>
+      <p>VPS for the API. Render/Replit free tier for the frontend. Supabase for DB. Ollama on your own GPU. No startup costs.</p>
+    </div>
+    <div class="card">
+      <div class="badge">05 — Iterate</div>
+      <h3>Ship Every 48 Hours</h3>
+      <p>Launch ugly. Get feedback. Add features that buyers actually ask for. Don't build in silence — build in public and charge for early access.</p>
+    </div>
+    <div class="card">
+      <div class="badge">06 — Cash</div>
+      <h3>Revenue Day One</h3>
+      <p>Gumroad link. $9/mo. $29 one-time. Doesn't need to be perfect — needs to solve one real problem and accept money.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section reveal" id="tools">
+  <h2>Already Shipping</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="badge">Meetings</div>
+      <h3>AI Meeting Tracker</h3>
+      <p>Drop a transcript. Get back: summary + action items + owners + deadlines. Arabic + English. Local models. Zero API cost.</p>
     </div>
     <div class="card">
       <div class="badge">Intelligence</div>
       <h3>GitHub Goldmine Hunter</h3>
-      <p>Scoring 265+ repos by engagement velocity. Catching sub-500-star repos before they peak. Alpha signals, no noise.</p>
+      <p>313 repos scored by engagement velocity. Catches sub-500-star repos before they peak. Alpha signals for builders.</p>
     </div>
     <div class="card">
-      <div class="badge">Content</div>
-      <h3>RESISTENZA Voice</h3>
-      <p>Arabic-first AI content pipeline. Derja + Fusha. Visual brand built for underground builders. No corporate polish.</p>
+      <div class="badge">Scraping</div>
+      <h3>Twitter Scraper v2</h3>
+      <p>Camoufox-powered. No Twitter API keys. Browser-grade session management. Reads anything, posts anything.</p>
     </div>
     <div class="card">
-      <div class="badge">Posting</div>
-      <h3>Zero-API Twitter Poster</h3>
-      <p>Browser-automated posting. No Twitter API keys. No rate limits. Uses your existing session cookies.</p>
+      <div class="badge">Agents</div>
+      <h3>RESISTENZA Agent OS</h3>
+      <p>Multi-agent orchestration. Skills system. Memory. Arabic-first voice. Built for 24/7 autonomous operation.</p>
     </div>
   </div>
 </section>
 
 <!-- BANNER -->
 <div class="banner reveal">
-  <h2>Build or 被 build.</h2>
-  <p>The AI space is being carved up. Open tools or locked-in slaves.</p>
+  <h2>The Stack That Costs Nothing</h2>
+  <p>Ollama + FastAPI + Camoufox + VPS. Every tool you need to build and ship. $0/month.</p>
   <a href="https://github.com/S17S17" class="btn btn-primary">Start Building</a>
 </div>
 
 <!-- PHILOSOPHY -->
 <section class="section reveal">
-  <h2>The RESISTENZA Way</h2>
+  <h2>Rules We Actually Follow</h2>
   <div class="grid">
     <div class="card">
-      <h3>No Permission</h3>
-      <p>Don't ask. Build. Ship. Fix later. The only bad build is the one that stays in your head.</p>
+      <h3>Ship Ugly</h3>
+      <p>Working ugly beats perfect unfinished. Launch at 60%. Fix what buyers complain about. Don't guess what people want — charge them to tell you.</p>
     </div>
     <div class="card">
-      <h3>Arabic First</h3>
-      <p>The Arabic AI space is wide open. Zero competition if you show up first and stay.</p>
+      <h3>Boring Wins</h3>
+      <p>The best micro-SaaS are wrappers on boring APIs. Weather. Data. Schedules. The wrapper is the product — not the data.</p>
     </div>
     <div class="card">
-      <h3>Open Over Proprietary</h3>
-      <p>Every tool we build is open. Community outpaces corporation every time.</p>
+      <h3>Charge First</h3>
+      <p>Free users are expensive. $9/mo filters for people who actually need it. Build for paying customers from day one.</p>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING — ACCESS -->
 <section class="section reveal" id="pricing">
-  <h2>Access</h2>
-  <p style="color:#666; margin-bottom:8px;">All tools are free and open source.</p>
+  <h2>Get the Pipeline</h2>
+  <p style="color:#666; margin-bottom:8px;">The exact system. The working code. Ready to clone.</p>
   <div class="pricing">
     <div class="price-tier">
-      <div class="tier-name">Free Tier</div>
+      <div class="tier-name">Free</div>
       <div class="amount">$0</div>
       <div class="period">forever</div>
       <ul>
-        <li>All open source tools</li>
+        <li>Open source tools</li>
         <li>GitHub repos</li>
         <li>RESISTENZA wiki</li>
         <li>Community access</li>
       </ul>
     </div>
     <div class="price-tier featured">
-      <div class="tier-name">Builder Tier</div>
+      <div class="tier-name">Pipeline Access</div>
       <div class="amount">$0</div>
       <div class="period">contrib + waitlist</div>
       <ul>
-        <li>Early access to beta tools</li>
-        <li>Private builds</li>
+        <li>Full micro-SaaS playbook</li>
+        <li>Working code templates</li>
         <li>Direct line to Semah</li>
         <li>Ship your tool here</li>
       </ul>
     </div>
   </div>
   <p style="color:#444; font-size:0.8rem; margin-top:16px;">
-    Everything here runs on $0 budget. VPS already paid. Ollama is free. No SaaS dependency.
+    Every tool ships. Every template works. Zero vaporware.
   </p>
 </section>
 
@@ -379,9 +363,7 @@ footer a:hover { color: var(--fg); }
 </footer>
 
 </div>
-
 <script>
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
